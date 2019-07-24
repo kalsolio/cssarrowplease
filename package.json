@@ -18,7 +18,9 @@
   "scripts": {
     "start": "node ./server.js",
     "build": "./node_modules/browserify/bin/cmd.js -e app/main.js -o public/js/cssarrowplease.js",
-    "test": "mocha --require=test/test_helper.js"
+    "test": "mocha --require=test/test_helper.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "connect": "~2.0.3",
@@ -28,7 +30,8 @@
     "mocha": "latest",
     "chai": "latest",
     "sinon": "latest",
-    "sinon-chai": "latest"
+    "sinon-chai": "latest",
+    "snyk": "^1.189.0"
   },
   "engines": {
     "node": ">=0.10"
@@ -45,5 +48,6 @@
   "domains": [
     "cssarrowplease.com",
     "www.cssarrowplease.com"
-  ]
+  ],
+  "snyk": true
 }
